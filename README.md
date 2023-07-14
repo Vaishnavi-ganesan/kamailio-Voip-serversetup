@@ -83,10 +83,11 @@ To check the subscriber is added, following command is used
 ```
 kamctl db show subscriber
 ```
-**Step7:** Connection to linphone(androd client) to make a call
+**Step7:** Connect to linphone(androd client) to make a call      
 Linphone android client was installed in two android phone(Note:Both must be connected to same wifi)
 The username,password and sip domain was configured.
 And the call is made via linphone
+
 
 
 
