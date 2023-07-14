@@ -1,10 +1,10 @@
 ### kamailio-Voip-serversetup
-Step1: Install mariadb database server
+**Step1**: Install mariadb database server
 ```
 sudo apt update
 sudo apt install mariadb-server
 ```
-Step2: Add Kamailio apt repository
+**Step2:** Add Kamailio apt repository
 ```
 wget -O- http://deb.kamailio.org/kamailiodebkey.gpg | sudo apt-key add -
 ```
@@ -15,7 +15,8 @@ deb     http://deb.kamailio.org/kamailio57 jammy main
 deb-src http://deb.kamailio.org/kamailio57 jammy main
 ```
 The list of APT repositories and associated operating systems is available at http://deb.kamailio.org  
-Step3: Install Kamailio
+
+**Step3:** Install Kamailio
 ```
 sudo apt update
 sudo apt install kamailio kamailio-mysql-modules
@@ -25,7 +26,8 @@ To be able to load websocket module, you have to install the package kamailio-we
 sudo apt install kamailio-websocket-modules kamailio-tls-modules
 ```
 Once the above commands are finished, you can check if ```kamailio``` application is available and confirm installed version using ```kamailio -V```    
-Step 4: Configure Kamailio 
+
+**Step 4:** Configure Kamailio 
 Edit the file ```/etc/kamailio/kamctlrc``` and make sure the ```DBENGINE``` variable is set to ```MySQL```. Remove the # symbol to uncomment it.
 Set Database engine to MYSQL
 ```
@@ -56,8 +58,9 @@ sudo nano /etc/kamailio/kamailio.cfg
 #!define WITH_USRLOCDB
 #!define WITH_ACCDB
 ```
-These directives will turn on necessary modules.  E.g when you specify,WITH_MYSQL it enables the loading of mysql.    
-Step5: Restart kamailio service
+These directives will turn on necessary modules.  E.g when you specify,WITH_MYSQL it enables the loading of mysql.   
+
+**Step5:** Restart kamailio service
 ```
 sudo systemctl restart kamailio
 ```
@@ -65,8 +68,9 @@ To check the status
 ```
  systemctl status kamailio
 ```
-If you encounter any issues with Kamailio service, the logs are available on``/var/log/kamailio.log```          
-Step6: Adding subscriber
+If you encounter any issues with Kamailio service, the logs are available on``/var/log/kamailio.log```     
+
+**Step6:** Adding subscriber
 Adding Subscribers To add subscribers (users), you can use the kamctl command:
 ```
 kamctl add userid password
@@ -79,7 +83,7 @@ To check the subscriber is added, following command is used
 ```
 kamctl db show subscriber
 ```
-Step7: Connection to linphone(androd client) to make a call
+**Step7:** Connection to linphone(androd client) to make a call
 Linphone android client was installed in two android phone(Note:Both must be connected to same wifi)
 The username,password and sip domain was configured.
 And the call is made via linphone
