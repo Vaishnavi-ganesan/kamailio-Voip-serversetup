@@ -24,9 +24,9 @@ To be able to load websocket module, you have to install the package kamailio-we
 ```
 sudo apt install kamailio-websocket-modules kamailio-tls-modules
 ```
-Once the above commands are finished, you can check if ```kamailio``` application is available and confirm installed version using ```kamailio -V```
+Once the above commands are finished, you can check if ```kamailio``` application is available and confirm installed version using ```kamailio -V```    
 Step 4: Configure Kamailio 
-Edit the file /etc/kamailio/kamctlrc and make sure the DBENGINE variable is set to MySQL. Remove the # symbol to uncomment it.
+Edit the file ```/etc/kamailio/kamctlrc``` and make sure the ```DBENGINE``` variable is set to ```MySQL```. Remove the # symbol to uncomment it.
 Set Database engine to MYSQL
 ```
 sudo nano /etc/kamailio/kamctlrc
@@ -56,7 +56,7 @@ sudo nano /etc/kamailio/kamailio.cfg
 #!define WITH_USRLOCDB
 #!define WITH_ACCDB
 ```
-These directives will turn on necessary modules.  E.g when you specify,WITH_MYSQL it enables the loading of mysql.
+These directives will turn on necessary modules.  E.g when you specify,WITH_MYSQL it enables the loading of mysql.    
 Step5: Restart kamailio service
 ```
 sudo systemctl restart kamailio
@@ -65,7 +65,7 @@ To check the status
 ```
  systemctl status kamailio
 ```
-If you encounter any issues with Kamailio service, the logs are available on``/var/log/kamailio.log```
+If you encounter any issues with Kamailio service, the logs are available on``/var/log/kamailio.log```          
 Step6: Adding subscriber
 Adding Subscribers To add subscribers (users), you can use the kamctl command:
 ```
